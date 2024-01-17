@@ -10,6 +10,8 @@ This project consists of three CAN nodes.
 - Temperature and Humidity data collector Node
 - Accelerometer and Gyroscope data collector Node
 
+![Node connection](docs/images/can_bus.jpeg)
+
 ## Building
 
 All three projects are based on ESP-32 microcontroller. They can be built using ESP IDF build tool.
