@@ -6,6 +6,8 @@
 #include "can_bus.h"
 #include "temp_humd.h"
 
+#define DHT_PIN GPIO_NUM_5
+
 static void sendOverCan(int16_t temp, int16_t humd)
 {
     temp_humd_data_t data = {
@@ -16,15 +18,13 @@ static void sendOverCan(int16_t temp, int16_t humd)
 
 void temp_humd_task()
 {
-    const int tempPin = 5;
-    int counter = 1;
+    int16_t temp;
+    int16_t humd;
     for (;;)
     {
         delay_ms(5000);
-        int16_t temp = -1;
-        int16_t hum = -1;
-        dht_read_data(DHT_TYPE_DHT11, tempPin, &hum, &temp);
-        sendOverCan(temp, hum);
-        printf("%d -> Temp: %d, Hum: %d\n", counter++, temp, hum);
+        dht_read_data(DHT_TYPE_DHT11, DHT_PIN, &humd, &temp);
+        sendOverCan(temp, humd);
+        printf("Temp: %d, Hum: %d\n", temp, humd);
     }
 }
