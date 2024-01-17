@@ -134,7 +134,7 @@ void display_task()
     delay_ms(500);
     initialize_display();
     int fetch_count = 0;
-    while (1)
+    for (;;)
     {
         delay_ms(100);
         fetch_data();

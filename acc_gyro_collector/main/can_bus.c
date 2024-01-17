@@ -113,7 +113,7 @@ void can_send_task()
     setup_twai();
     setup_message();
 
-    while (1)
+    for (;;)
     {
         acce_gyro_data_t data;
         if (pdTRUE == xQueueReceive(acce_gyro_tx_queue_handle, &data, pdMS_TO_TICKS(1000)))
