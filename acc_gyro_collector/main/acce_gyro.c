@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <freeRTOS/freeRTOS.h>
+#include <freertos/FreeRTOS.h>
 #include <driver/i2c.h>
 
 #include "mpu6050.h"
