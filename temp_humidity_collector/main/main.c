@@ -7,7 +7,7 @@
 
 void app_main(void)
 {
-    xTaskCreate(led_blink_task, "Blink", 5000, NULL, tskIDLE_PRIORITY + 1, NULL);
-    xTaskCreate(can_tx_task, "Temp", 5000, NULL, tskIDLE_PRIORITY + 2, NULL);
-    xTaskCreate(temp_humd_task, "Temp_Humd", 5000, NULL, tskIDLE_PRIORITY + 2, NULL);
+    xTaskCreate(led_blink_task, "Blink", 1700, NULL, tskIDLE_PRIORITY + 1, NULL);
+    xTaskCreate(can_tx_task, "Temp", 2100, NULL, tskIDLE_PRIORITY + 2, NULL);
+    xTaskCreate(temp_humd_task, "Temp_Humd", 1700, NULL, tskIDLE_PRIORITY + 2, NULL);
 }
